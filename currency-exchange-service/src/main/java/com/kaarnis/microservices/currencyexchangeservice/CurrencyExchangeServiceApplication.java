@@ -1,13 +1,13 @@
-package com.in28minutes.microservices.currencyconversionservice;
+package com.kaarnis.microservices.currencyexchangeservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CurrencyConversionServiceApplication {
+public class CurrencyExchangeServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(CurrencyConversionServiceApplication.class, args);
+        SpringApplication.run(CurrencyExchangeServiceApplication.class, args);
     }
 
 }

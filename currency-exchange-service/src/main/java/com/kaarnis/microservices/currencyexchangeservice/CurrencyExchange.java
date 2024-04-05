@@ -1,31 +1,35 @@
-package com.in28minutes.microservices.currencyconversionservice;
+package com.kaarnis.microservices.currencyexchangeservice;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
 import java.math.BigDecimal;
 
-public class CurrencyConversion {
+@Entity
+public class CurrencyExchange {
+    @Id
     private Long id;
+
+    @Column(name="currency_from")
     private String from;
+
+    @Column(name="currency_to")
     private String to;
     private BigDecimal conversionMultiple;
-    private BigDecimal quantity;
-    private BigDecimal totalCalculatedAmount;
     private String environment;
 
-    public CurrencyConversion() {
-
-    }
-
-    public CurrencyConversion(Long id, String from, String to, BigDecimal conversionMultiple, BigDecimal quantity,
-            BigDecimal totalCalculatedAmount, String environment) {
-        super();
+    public CurrencyExchange(Long id, String from, String to, BigDecimal conversionMultiple) {
         this.id = id;
         this.from = from;
         this.to = to;
         this.conversionMultiple = conversionMultiple;
-        this.quantity = quantity;
-        this.totalCalculatedAmount = totalCalculatedAmount;
-        this.environment = environment;
     }
+
+    public CurrencyExchange() {
+
+    }
+
 
     public Long getId() {
         return id;
@@ -59,20 +63,8 @@ public class CurrencyConversion {
         this.conversionMultiple = conversionMultiple;
     }
 
-    public BigDecimal getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(BigDecimal quantity) {
-        this.quantity = quantity;
-    }
-
-    public BigDecimal getTotalCalculatedAmount() {
-        return totalCalculatedAmount;
-    }
-
-    public void setTotalCalculatedAmount(BigDecimal totalCalculatedAmount) {
-        this.totalCalculatedAmount = totalCalculatedAmount;
+    public CurrencyExchange(String environment) {
+        this.environment = environment;
     }
 
     public String getEnvironment() {
@@ -82,6 +74,4 @@ public class CurrencyConversion {
     public void setEnvironment(String environment) {
         this.environment = environment;
     }
-
-
 }
